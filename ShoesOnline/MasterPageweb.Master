@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageweb.master.cs" Inherits="masterpage1.MasterPageweb" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Shoes Online</title>
+    <asp:ContentPlaceHolder ID="title" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/js.js"></script>
+    <style>
+        ul {
+  list-style-type: none;
+  margin-top:0 ;
+  padding: 0;
+  overflow: hidden;
+  background-color: #F0A07C;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: #4A274F;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #F0A07C;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+        .header {
+            height: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+    <div class="header">
+        &nbsp;</div>
+        <ul>
+   
+ <%-- <li style="float:right"><a href="#about">Logout</a></li>
+            <li>--%>
+        <asp:Image ID="Image1" ImageUrl="~/images/logo2.png" runat="server" Height="82px" Width="92px" />
+            
+</ul>
+        <span style="font-size:30px; color: #4A274F; cursor:pointer" onclick="openNavmenu()">&#9776;</span>
+        <div class="sidenavmenu" id="mySidenavmenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Admin_Login.aspx">Home</a>
+            <a href ="Product.aspx">Product</a>
+            <a href="Category.aspx">Category Details</a>
+            <a href="About.aspx">About Us</a>
+                
+
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlacebody" runat="server">
+            </asp:ContentPlaceHolder>
+        
+    </form>
+</body>
+</html>
